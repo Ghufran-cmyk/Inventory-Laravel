@@ -40,7 +40,7 @@
     
     <div class="sidebar">
         <div class="sidebar-brand">
-            <div style="width: 40px; height: 40px; background: white; border-radius: 8px;"></div>
+            <img src="{{ asset('images/logo-saya.png') }}" alt="Logo Multivision" style="width: 40px; height: 40px; background: white; padding: 2px; border-radius: 8px; object-fit: cover;">
             <h2>MULTIVISION<br><span>GEAR</span></h2>
         </div>
         
@@ -68,16 +68,16 @@
 
                 <div class="form-row">
                     <div class="form-group">
-                        <label class="form-label">Kategori Peralatan</label>
-                        <select name="category_id" class="form-control" required>
-                            <option value="">-- Pilih Kategori --</option>
-                            @foreach ($categories as $cat)
-                                <option value="{{ $cat->id }}" {{ $product->category_id == $cat->id ? 'selected' : '' }}>
-                                    {{ $cat->name }}
-                                </option>
-                            @endforeach
-                        </select>
-                    </div>
+    <label class="form-label">Kategori Peralatan</label>
+    <select name="category" class="form-control" required>
+        <option value="">-- Pilih Kategori --</option>
+        @foreach ($categories as $cat)
+            <option value="{{ $cat }}" {{ $product->category == $cat ? 'selected' : '' }}>
+                {{ $cat }}
+            </option>
+        @endforeach
+    </select>
+</div>
 
                     <div class="form-group">
                         <label class="form-label">Kode SKU</label>

@@ -10,8 +10,12 @@ class Product extends Model
     use HasFactory;
 
 
-    public $timestamps = false;
-
-   
-    protected $fillable = ['category_id', 'sku', 'name', 'price', 'stock', 'minimum_stock', 'image'];
+    protected $fillable = [
+        'category', 
+        'sku', 
+        'name', 
+        'price', 
+        'stock', 
+        'image'    
+    ];
 }
